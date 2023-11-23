@@ -86,7 +86,6 @@ class Pig:
         elif current_player_name == self.ai_name:
             print(f"\n{self.ai_name}'s go!")
             amount_of_rolls = random.randint(1, 5)
-            print(amount_of_rolls)
             for _ in range(0, amount_of_rolls):
                 print("\n\tRolling", end="")
                 sys.stdout.flush()
@@ -103,7 +102,7 @@ class Pig:
 
                 self.current_go_score += roll_value
 
-                if self.ai_score + self.current_go_score > self.required_score:
+                if self.ai_score + self.current_go_score >= self.required_score:
                     break
 
             self.ai_score += self.current_go_score
